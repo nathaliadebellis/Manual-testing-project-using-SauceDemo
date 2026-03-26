@@ -1,11 +1,12 @@
 # Manual Testing Project using SauceDemo
 
+
 ## 📌 Overview
 
 This project demonstrates manual testing skills applied to the SauceDemo e-commerce application.
-It covers end-to-end test scenarios, including functional validation, negative testing, and bug reporting.
+It includes test planning, test case design, bug reporting, and test execution tracking.
 
-The objective is to validate core features, identify defects, and simulate a real QA testing workflow.
+The goal is to validate core functionalities and simulate a real QA testing workflow.
 
 ---
 
@@ -22,7 +23,8 @@ The following functionalities were tested:
 * User authentication (login/logout)
 * Product listing and sorting
 * Cart operations (add/remove items)
-* Checkout process (data validation and order completion)
+* Checkout process
+* Session handling
 
 ---
 
@@ -34,33 +36,29 @@ The testing strategy includes:
 * Regression Testing
 * Exploratory Testing
 * Negative Testing
-
-Test scenarios were designed to validate both expected behavior and edge cases.
-
----
-
-## 📊 Test Coverage
-
-* ✔ 36 Test Cases
-* ✔ Positive and Negative Scenarios
-* ✔ Multiple User Types:
-
-  * standard_user
-  * locked_out_user
-  * problem_user
-  * performance_glitch_user
-* ✔ End-to-End Test Flow
+* Usability Testing
 
 ---
 
-## 🐞 Bug Reporting
+## 📊 Test Execution Results
 
-The project includes structured bug reports with:
+* Total Test Cases: 36
+* Passed: 31
+* Failed: 5
+* Blocked: 0
+* Pass Rate: 86%
 
-* Clear steps to reproduce
-* Expected vs actual results
-* Severity and priority classification
-* Impact analysis
+---
+
+## 🐞 Defects Summary
+
+Five defects were identified during testing:
+
+* Locked user message clarity
+* Incorrect product images for problem_user
+* Cart not cleared after logout/login
+* Invalid ZIP code accepted
+* First name accepts blank spaces
 
 ---
 
@@ -82,15 +80,21 @@ Manual-testing-project-using-SauceDemo
 
 * Manual Testing Techniques
 * Excel (Test Cases)
-* GitHub (Version Control & Documentation)
+* GitHub (Documentation & Version Control)
 
 ---
 
 ## 🚀 Key Highlights
 
-* Real-world QA documentation structure
-* End-to-end test coverage
-* Focus on usability and edge cases
-* Professional bug reporting standards
+* 36 Manual Test Cases
+* End-to-End Test Coverage
+* Real Bug Reports
+* Test Execution Metrics
+* Evidence with Screenshots
 
 ---
+
+## 👩‍💻 Author
+
+Nathalia Gomes
+QA Engineer | Manual & Automation Testing
