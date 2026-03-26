@@ -1,4 +1,4 @@
-# SauceDemo - Manual Testing Project
+# Manual Testing Project Using SauceDemo
 
 ## 📌 Overview
 
