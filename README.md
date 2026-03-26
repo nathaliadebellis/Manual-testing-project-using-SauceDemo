@@ -1,4 +1,4 @@
-# Manual Testing Project - SauceDemo
+# Manual Testing Project using SauceDemo
 
 ## 📌 Overview
 
@@ -67,7 +67,7 @@ The project includes structured bug reports with:
 ## 📁 Project Structure
 
 ```
-saucedemo-manual-testing
+Manual-testing-project-using-SauceDemo
 │
 ├── test-plan
 ├── test-cases
