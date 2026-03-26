@@ -1,5 +1,4 @@
-# Manual Testing Project using SauceDemo
-
+# SauceDemo - Manual Testing Project
 
 ## 📌 Overview
 
@@ -94,7 +93,6 @@ Manual-testing-project-using-SauceDemo
 
 ---
 
-## 👩‍💻 Author
+## 👩‍💻 Autora
 
-Nathalia Gomes
-QA Engineer | Manual & Automation Testing
+Projeto desenvolvido por Nathalia De Bellis Gomes Anselmo, com foco em desenvolvimento na área de Qualidade de Software (QA) e automação de testes.
