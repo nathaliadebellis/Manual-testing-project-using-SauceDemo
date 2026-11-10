@@ -1,98 +1,89 @@
-# Manual Testing Project Using SauceDemo
+# SauceDemo — Manual Software Testing Portfolio Project
 
-## 📌 Overview
+A manual QA portfolio project focused on planning, designing, documenting and reviewing tests for the SauceDemo e-commerce demo application. The repository demonstrates a structured testing workflow and emphasizes evidence-based defect assessment.
 
-This project demonstrates manual testing skills applied to the SauceDemo e-commerce application.
-It includes test planning, test case design, bug reporting, and test execution tracking.
+> **Project note:** SauceDemo includes special-purpose accounts that intentionally simulate problematic behavior. An observed anomaly is not automatically a product defect. This repository distinguishes confirmed evidence, seeded test-account behavior and cases that require a product requirement or acceptance criterion.
 
-The goal is to validate core functionalities and simulate a real QA testing workflow.
+## Project objectives
 
----
+- Practice test planning and test-case design for core e-commerce journeys.
+- Exercise positive, negative and session-related scenarios.
+- Record execution evidence and maintain traceability.
+- Assess potential defects using reproducible steps and explicit expected results.
 
-## 🌐 Application Under Test
+## Application under test
 
-https://www.saucedemo.com/
+- URL: https://www.saucedemo.com/
+- Demo accounts used: `standard_user`, `locked_out_user`, `problem_user`, `performance_glitch_user`.
+- Demo password: `secret_sauce`.
 
----
+## Scope
 
-## 🧪 Test Scope
+| Area | Coverage |
+|---|---|
+| Authentication | Valid/invalid login, locked account, logout and protected-page access. |
+| Inventory | Product listing, product details and sorting. |
+| Cart | Add, remove, view and navigation. |
+| Checkout | Required fields, postal-code observation, order summary and completion. |
+| Session behavior | Navigation and cart state across logout/login. |
 
-The following functionalities were tested:
+## Test approach
 
-* User authentication (login/logout)
-* Product listing and sorting
-* Cart operations (add/remove items)
-* Checkout process
-* Session handling
+Functional testing, positive and negative testing, exploratory observations, and regression-oriented scenarios. The repository does not contain official product requirements; assumption-dependent expectations are marked **Needs review** rather than being reported as confirmed defects.
 
----
+## Results at a glance
 
-## 🔎 Test Approach
+| Metric | Result |
+|---|---:|
+| Test cases | 36 |
+| Historically recorded as passed | 31 |
+| Historically recorded as failed | 5 |
+| Original pass rate | 86.1% |
+| Current documentation status: Pass | 32 |
+| Current documentation status: Needs review | 4 |
+| Confirmed defects from evidence review | 0 established |
 
-The testing strategy includes:
+The current status is a documentation/evidence reassessment, **not a fresh test execution**. TC-002 was corrected based on its screenshot. TC-007, TC-023, TC-024 and TC-035 require clarification. The original 90% exit target was not met. See the [execution summary](execution-report/execution-report.md).
 
-* Functional Testing
-* Regression Testing
-* Exploratory Testing
-* Negative Testing
-* Usability Testing
+## Repository structure
 
----
-
-## 📊 Test Execution Results
-
-* Total Test Cases: 36
-* Passed: 31
-* Failed: 5
-* Blocked: 0
-* Pass Rate: 86%
-
----
-
-## 🐞 Defects Summary
-
-Five defects were identified during testing:
-
-* Locked user message clarity
-* Incorrect product images for problem_user
-* Cart not cleared after logout/login
-* Invalid ZIP code accepted
-* First name accepts blank spaces
-
----
-
-## 📁 Project Structure
-
-```
-Manual-testing-project-using-SauceDemo
-│
-├── test-plan
-├── test-cases
-├── bug-reports
-├── execution-report
-└── evidences
+```text
+.
+├── README.md
+├── test-plan/
+│   └── test-plan.md
+├── test-cases/
+│   ├── test-cases.xlsx
+│   └── traceability-matrix.xlsx
+├── bug-reports/
+│   └── bug-report.md
+├── execution-report/
+│   └── execution-report.md
+└── evidences/
+    └── screenshots/
 ```
 
----
+## Deliverables
 
-## 🛠 Tools Used
+- [Test plan](test-plan/test-plan.md)
+- [Test cases — Excel](test-cases/test-cases.xlsx)
+- [Traceability matrix — Excel](test-cases/traceability-matrix.xlsx)
+- [Defect assessment and observations](bug-reports/bug-report.md)
+- [Execution summary](execution-report/execution-report.md)
+- [Test evidence screenshots](evidences/screenshots/)
 
-* Manual Testing Techniques
-* Excel (Test Cases)
-* GitHub (Documentation & Version Control)
+## Tools and skills demonstrated
 
----
+- Manual software testing and test design.
+- Test documentation and execution tracking.
+- Defect reproduction and evidence collection.
+- Requirements thinking and traceability.
+- Microsoft Excel and Git/GitHub documentation.
 
-## 🚀 Key Highlights
+## Environment
 
-* 36 Manual Test Cases
-* End-to-End Test Coverage
-* Real Bug Reports
-* Test Execution Metrics
-* Evidence with Screenshots
+The original plan records Windows 11, Google Chrome and 1920 × 1080 resolution. The exact browser version is not verified in the supplied execution artifacts and should be captured in the next run.
 
----
+## Author
 
-## 👩‍💻 Autora
-
-Projeto desenvolvido por Nathalia De Bellis Gomes Anselmo, com foco em desenvolvimento na área de Qualidade de Software (QA) e automação de testes.
+Nathalia De Bellis Gomes Anselmo — portfolio project focused on Software Quality Assurance (QA) and software testing.
