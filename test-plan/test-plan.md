@@ -1,83 +1,103 @@
 # Test Plan — SauceDemo
 
+| Document ID | Version | Review date | Status |
+|---|---:|---|---|
+| QA-TP-SD-001 | 1.2 | 2026-11-10 | Updated after defect confirmation |
+
 ## 1. Objective
 
-Validate the main e-commerce user journeys in SauceDemo and document test design, execution observations, evidence, and potential defects. This is a portfolio exercise using a public demo application, not a formal certification of the product.
+Define the scope, approach, data, and completion criteria for manual functional testing of core SauceDemo shopping journeys. This plan supports a portfolio exercise; it is not a product acceptance or compliance assessment.
 
 ## 2. Scope
 
 ### In scope
-- Authentication: valid/invalid credentials, locked account, logout and access control.
-- Inventory: product listing, product details and sorting.
-- Cart: add, remove, view and navigation.
-- Checkout: required-field behavior, order summary and completion flow.
-- Session-related behavior observed during logout/login.
+
+- Authentication: valid and invalid credentials, locked-account response, logout, and protected-page access.
+- Inventory: product listing, product details, sorting, and images.
+- Cart: add/remove, contents, navigation, and observed state across logout/login.
+- Checkout: customer information, postal-code behavior, order summary, completion, and post-completion navigation.
+- Session behavior: logout and browser-back behavior.
 
 ### Out of scope
-- Real payment processing or external payment gateway integration.
-- Load, stress, security penetration and performance benchmarking.
-- Native mobile application testing and broad cross-browser compatibility.
-- Backend/API validation (not covered by the supplied artifacts).
 
-## 3. Test basis and assumptions
+- Real payment processing, payment-provider integration, or shipping fulfillment.
+- Load, stress, performance benchmarking, security penetration, and API/backend testing.
+- Native mobile applications and broad cross-browser compatibility.
+- Requirements validation or certification against an unavailable product specification.
 
-The repository does not include formal product requirements or stakeholder-approved acceptance criteria. Therefore, test expectations in the spreadsheet are **portfolio test conditions derived from observable user journeys**, not claims about official SauceDemo requirements. Any expectation that depends on a product decision (for example, cart persistence or postal-code format) must be clarified before a failure is classified as a defect.
+## 3. Test basis and data
 
-Special-purpose SauceDemo accounts may intentionally exhibit abnormal behavior. Their behavior must be reported as a test-account characteristic unless it demonstrates a violation of an applicable requirement.
+No formal product specification is included. For this educational exercise, the tester confirmed that the behaviors represented by BUG-002 through BUG-005 are intentionally seeded defects; the corresponding test conditions are treated as the exercise's test oracle. BUG-001 remains expected behavior because its captured error explicitly identifies the locked account and meets TC-002's expected result. The exercise-specific confirmation does not imply a general SauceDemo product requirement.
+
+Recorded demo accounts: `standard_user`, `locked_out_user`, `problem_user`, and `performance_glitch_user`; documented password: `secret_sauce`. The workbook's additional test values define reproducible test conditions; they do not prove the exact inputs used in the rerun unless supported by its evidence.
 
 ## 4. Test environment
 
-| Item | Recorded value |
-|---|---|
-| Application | https://www.saucedemo.com/ |
-| Operating system | Windows 11 (recorded in original plan) |
-| Browser | Google Chrome (exact version not independently verified) |
-| Screen resolution | 1920 × 1080 (recorded in original plan) |
-| Test data | `standard_user`, `locked_out_user`, `problem_user`, `performance_glitch_user` |
-| Password | `secret_sauce` (demo credentials) |
+| Item | Recorded information | Qualification |
+|---|---|---|
+| Application | https://www.saucedemo.com/ | Public demo application |
+| Operating system | Windows 11 | Reported for the 2026-11-10 rerun |
+| Browser | Google Chrome 157.0.8103.50 (64-bit) | Reported for the 2026-11-10 rerun |
+| Resolution | Not recorded for the rerun | Earlier plan recorded 1920 × 1080; do not assume unchanged |
+| Accounts | Demo accounts listed above | Do not use for production |
 
-For future executions, record the actual browser version, execution date, application availability, and tester. Do not infer an exact browser version from an old report.
+The rerun date and browser/OS were reported. Tester identity and display resolution were not recorded.
 
-## 5. Test approach
+## 5. Test strategy and types
 
-- Functional testing of core user journeys.
-- Positive and negative testing of input and authentication behavior.
-- Exploratory checks where behavior is not fully specified.
-- Regression testing when a change or fix is available.
-- Usability observations, kept separate from functional defects unless a criterion is defined.
+- Manual, black-box functional testing of documented user journeys.
+- Positive and negative input testing for authentication and checkout.
+- Exploratory observation of special-purpose demo accounts and session behavior.
+- Regression testing only when a change/fix is available; no regression run is evidenced here.
+- Defect verification against the exercise-specific oracle, with reproducible steps and linked screenshots.
+- Usability observations are separated from functional defects unless an applicable criterion is defined.
+
+Each case should state preconditions, test data, numbered steps, and an observable expected result. Record the actual result and link evidence during execution. Preserve historical status unless supplied evidence establishes a specific inconsistency.
 
 ## 6. Entry criteria
 
-- Application is reachable.
-- Browser and test data are available.
-- Test cases and expected results are documented.
-- The tester can identify which behaviors are defined requirements and which are assumptions.
+- The application is reachable and the test environment is available.
+- The test case workbook and demo credentials are available.
+- The tester can distinguish stated test conditions from approved requirements.
+- Any requirement-dependent behavior has an identified owner or is explicitly flagged for clarification.
 
 ## 7. Exit criteria
 
-- All in-scope test cases have an explicit execution status.
-- Every failure has reproducible steps and evidence, or is marked as requiring investigation.
-- No unresolved critical/high-severity confirmed defect remains (severity is not assigned to unconfirmed observations).
-- Results distinguish Pass, Fail, Blocked and Needs review.
-- Execution summary and limitations are documented.
+- All 36 in-scope cases have a recorded execution status.
+- Every failure has reproducible steps and evidence, or its evidentiary limitation is documented.
+- No unresolved Critical/High confirmed defect remains.
+- Results distinguish confirmed seeded defects from expected behavior and unresolved evidence gaps.
+- The execution report and traceability matrix reconcile to the workbook.
+- The portfolio target of at least 90% Pass is reported separately from the other exit criteria.
 
-A 90% pass-rate target may be used as a project quality indicator, but it does not override unresolved requirements or justify reclassifying test results.
+## 8. Severity and priority criteria
 
-## 8. Risks and mitigation
+Severity describes the demonstrated impact of a **confirmed** defect; priority describes the urgency to address it. Neither should be assigned to an unconfirmed observation. The workbook's existing Critical/High/Medium/Low labels are retained as historical test priorities; they are not defect severity ratings.
+
+| Level | Severity guidance | Priority guidance |
+|---|---|---|
+| Critical | Core service unavailable, data loss/exposure, or essential journey cannot proceed with no reasonable workaround | P1: immediate response; blocks release/use |
+| High | Major user journey materially impaired, broad impact, or significant incorrect outcome | P2: resolve before release where feasible |
+| Medium | Limited functionality or a workaround exists; impact is contained | P3: schedule for a planned fix |
+| Low | Minor impact, cosmetic issue, or low-frequency inconvenience | P4: address when practical |
+
+Assessments require a confirmed requirement violation, reproducible behavior, and evidence. Potential impact alone does not establish severity.
+
+## 9. Risks and mitigation
 
 | Risk | Mitigation |
 |---|---|
-| Demo application behavior changes | Record execution date and environment; retain screenshots. |
-| Special accounts intentionally simulate problems | Separate seeded behavior from product defects. |
-| No formal requirements are supplied | Mark assumption-dependent cases as Needs review. |
-| Browser/version details are missing | Capture actual version during the next execution. |
-| Evidence paths become stale | Use relative repository paths and verify every link. |
+| Demo application or seeded-account behavior changes | Record run date, exact environment, account, and evidence; distinguish intentional test behavior from product defects |
+| No formal product specification is included | Use only the tester-confirmed exercise oracle for seeded scenarios; do not extend it to unrelated behaviors |
+| Historical actual results and execution metadata are incomplete | Mark missing information explicitly; do not reconstruct it |
+| Screenshot context does not prove the full sequence | Capture each relevant state and action during a witnessed rerun |
+| Repository-relative evidence links become stale | Check paths and links during review |
 
-## 9. Deliverables
+## 10. Deliverables
 
-- Test plan.
-- Test case workbook.
-- Requirements-to-test traceability matrix.
-- Defect assessment and observations.
-- Execution summary.
-- Screenshots and other test evidence.
+- This test plan.
+- [36-case test workbook](../test-cases/test-cases.xlsx).
+- [Traceability matrix](../traceability-matrix.md).
+- [Confirmed defect reports and expected behavior](../bug-reports/bug-report.md).
+- [Execution report](../execution-report/execution-report.md).
+- Original supplied screenshots under `evidences/screenshots/`.
