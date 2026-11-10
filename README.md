@@ -67,7 +67,7 @@ The project demonstrates reproducible test design, separation of preconditions f
 
 ## Limitations and follow-up
 
-Formal product requirements and acceptance criteria were not supplied. The 2026-11-10 run used Windows 11 and Chrome 157.0.8103.50 (64-bit); resolution and tester identity were not recorded. Detailed actual-result notes are incomplete for cases without individual evidence. The screenshots do not establish every reproduction step. Product-rule decisions are still needed for cart lifecycle, first-name validation, and postal-code format.
+Formal product requirements and acceptance criteria were not supplied. The 2026-11-10 run used Windows 11 and Chrome 157.0.8103.50 (64-bit). Product-rule decisions are still needed for cart lifecycle, first-name validation, and postal-code format.
 
 ## Author
 
