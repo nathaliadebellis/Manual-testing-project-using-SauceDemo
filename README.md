@@ -53,14 +53,6 @@ The four failures are TC-007, TC-023, TC-024, and TC-035. They record outcomes a
 | [execution-report/execution-report.md](execution-report/execution-report.md) | Reconciled metrics and exit-criteria evaluation |
 | [evidences/screenshots/](evidences/screenshots/) | Original screenshots referenced by the reports |
 
-## Main quality findings
-
-- The locked-user screenshot contains “Sorry, this user has been locked out.” The claim that the message does not identify the reason is not supported.
-- The screenshots show anomalous product images and checkout behavior, but the repository contains no approved requirement confirming these are defects.
-- The cart screenshots do not prove a complete logout-and-new-login sequence, and no requirement defines whether the cart should be cleared.
-- The ZIP evidence filenames were correct on disk but the Markdown referenced nonexistent BUG-004 filenames; the references are corrected to BUG-005.
-- The workbook and report now separate test outcome from defect confirmation. Missing historical actual results are explicitly marked as unrecorded rather than reconstructed.
-
 ## Technical learnings
 
 The project demonstrates reproducible test design, separation of preconditions from test data, evidence review, execution metrics, requirement-aware defect triage, and traceability. It also highlights that a failed test condition is not automatically a confirmed defect.
